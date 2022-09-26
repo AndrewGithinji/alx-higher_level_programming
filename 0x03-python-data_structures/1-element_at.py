@@ -1,4 +1,4 @@
-#!/usr/bin/python3
+#!/usr/bin/python
 def element_at(my_list, idx):
     for idx in my_list:
         if idx < 0:
