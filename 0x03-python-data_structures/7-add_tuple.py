@@ -15,4 +15,5 @@ def add_tuple(tuple_a=(), tuple_b=()):
                 if tuple_b > 1:
                     tuple_b = (1, 1)
                     tuple_c = [tuple_a + tuple_b]
-                    print(tuple_c)
+                    return tuple_c
+
