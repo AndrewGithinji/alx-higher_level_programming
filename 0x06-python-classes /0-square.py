@@ -1,6 +1,6 @@
 #!/usr/bin/python3
-#0-square.py by Andrew Githinji
-"""defines a square"""
+# 0-square.py by Andrew Githinji
+"""Defines a square """
 
 
 class Square:
