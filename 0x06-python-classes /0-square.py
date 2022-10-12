@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-# 0-square.py by Andrew Githinji
+# 0-square.py by Andrew Git
 """Defines a square """
 
 
