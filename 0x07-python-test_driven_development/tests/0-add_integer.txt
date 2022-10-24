@@ -1,66 +1,91 @@
-The ``add_ integer`` module
-======================
+The ``0-add_integer`` module 
+=============================================
 
-using ``add_integer``
+Using ``add_integer``
+---------------------
 
-----------------------
+This is a text file in reStructured Text format. First import ``add_integer`` from the ``0-add_integer`` module:
 
-Importing the module
-    >>> add_integer = __import__("0-add_integer").add_integer
+>>> add_integer = __import__('0-add_integer').add_integer
 
-Checking module Docstring
-    >>> c = __import__("0-add_integer").__doc__
-    >>> len(c) > 1
-    True
+Now use it:
 
-Testing Normal Addition
-    >>> add_integer(1, 5)
-    6
 
-Testing Negative Number
-    >>> add_integer(100, -5)
-    95
+add two Integers
+-----------------------------------------------------------------
+>>> add_integer(1, 2)
+3
 
-Testing The default Variable b= 98
-    >>> add_integer(2)
-    100
 
-Testing Emty args Raise Error
-    >>> add_integer()
-    Traceback (most recent call last):
+add two integers, one is negative
+-----------------------------------------------------------------
+>>> add_integer(100, -2)
+98
+
+
+If only a is provided, b will be 98.
+-----------------------------------------------------------------
+>>> add_integer(2)
+100
+
+
+Floats may be provided, but they will be cast as integers.
+-----------------------------------------------------------------
+>>> add_integer(100.3, -2)
+98
+
+
+Only integers and floats may be provided.
+-----------------------------------------------------------------
+>>> add_integer(4, "School")
+Traceback (most recent call last):
     ...
-    TypeError: add_integer() missing 1 required positional argument: 'a'
+TypeError: b must be an integer
 
-Testing A float Return int
-    >>> add_integer(100.3, -2)
-    98
 
-Testing  not int variable for b
-    >>> add_integer(2, "Holberton")
-    Traceback (most recent call last):
+At least one argument must be provided.
+-----------------------------------------------------------------
+>>> add_integer(None)
+Traceback (most recent call last):
     ...
-    TypeError: b must be an integer
+TypeError: a must be an integer
 
-Testing  not int variable for a
-    >>> add_integer("school", 10)
-    Traceback (most recent call last):
+
+Test without a value
+-----------------------------------------------------------------
+>>> add_integer()
+Traceback (most recent call last):
     ...
-    TypeError: a must be an integer
+TypeError: add_integer() missing 1 required positional argument: 'a'
 
-Testing with more than 2 args
-    >>> add_integer(5, 2, 3)
-    Traceback (most recent call last):
+
+Test for a list
+-----------------------------------------------------------------
+>>> add_integer([1, 2, 3])
+Traceback (most recent call last):
     ...
-    TypeError: add_integer() takes from 1 to 2 positional arguments but 3 were given
+TypeError: a must be an integer
 
-Testing float  overflow
-    >>> add_integer(1, float('inf'))
-	Traceback (most recent call last):
-	...
-	OverflowError: cannot convert float infinity to integer
 
-Testing Nan
-	 >>> add_integer(1, float('nan'))
-	 Traceback (most recent call last):
-	 ...
-	 ValueError: cannot convert float NaN to integer
+Test for a tuple
+-----------------------------------------------------------------
+>>> add_integer((1, 2, 3))
+Traceback (most recent call last):
+    ...
+TypeError: a must be an integer
+
+
+Test infinite number
+-----------------------------------------------------------------
+>>> add_integer(float('inf'))
+Traceback (most recent call last):
+    ...
+OverflowError: cannot convert float infinity to integer
+
+
+Test nan
+-----------------------------------------------------------------
+>>> add_integer(float('nan'))
+Traceback (most recent call last):
+    ...
+ValueError: cannot convert float NaN to integer
