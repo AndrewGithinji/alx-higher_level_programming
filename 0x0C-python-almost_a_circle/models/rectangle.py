@@ -9,6 +9,7 @@ class Rectangle(Base):
     """
     A representation of a rectangle
     """
+
     def __init__(self, width, height, x=0, y=0, id=None):
         """
         Init Class
@@ -74,7 +75,7 @@ class Rectangle(Base):
             ValueError: Value must be > 0
         """
         if type(value) is not int:
-                raise TypeError("height must be an integer")
+            raise TypeError("height must be an integer")
         if value <= 0:
             raise ValueError("height must be > 0")
         self.__height = value
@@ -106,7 +107,7 @@ class Rectangle(Base):
             ValueError: Value must be >= 0
         """
         if type(value) is not int:
-                raise TypeError("y must be an integer")
+            raise TypeError("y must be an integer")
         if value < 0:
             raise ValueError("y must be >= 0")
         self.__y = value
